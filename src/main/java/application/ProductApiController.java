@@ -1,25 +1,19 @@
 package application;
-//this is the new package generation for spring with service bindings
-import application.model.Product;
+import javax.validation.Valid;
 
-import io.swagger.annotations.*;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RequestPart;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.List;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import java.io.IOException;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
+
+//this is the new package generation for spring with service bindings
+import application.model.Product;
+import io.swagger.annotations.ApiParam;
 @javax.annotation.Generated(value = "com.ibm.mobile.sdkgen.platform.JavaSpringBindingsConfig", date = "2018-02-16T22:09:41.025Z")
 
 @Controller
