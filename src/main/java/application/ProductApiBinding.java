@@ -15,10 +15,11 @@ public class ProductApiBinding  {
   }
   public ApiResponseMessage<Product> get(Long productID) {
 	  
-	  Product product = new Product();
+	  Product product =null;
 
 	  if(productID==1)
 	  {
+		  product = new Product();
 		  product.setIdentifier(productID);
 		  product.setName("Load Factor Based Upgrades");
 	  }
