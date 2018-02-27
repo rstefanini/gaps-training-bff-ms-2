@@ -34,4 +34,8 @@ public class ProductApiBindingTest {
 	assertEquals("Load Factor Based Upgrades", productApiBinding.get(1L).getData().getName()); 
 	}
 
+	@Test
+	public final void testTwoProductsNamesShouldNotMatch() {
+	assertEquals("Load Factor Based Upgrades", productApiBinding.get(2L).getData().getName()); 
+	}
 }

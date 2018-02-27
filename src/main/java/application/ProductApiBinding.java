@@ -14,10 +14,15 @@ public class ProductApiBinding  {
       return new ApiResponseMessage<>(HttpStatus.INTERNAL_SERVER_ERROR, "not yet implemented", null);
   }
   public ApiResponseMessage<Product> get(Long productID) {
-	  Product lfbu = new Product();
-	  lfbu.setIdentifier(productID);
-	  lfbu.setName("Load Factor Based Upgrades");
-      return new ApiResponseMessage<>(HttpStatus.OK, "ok", lfbu);
+	  
+	  Product product = new Product();
+
+	  if(productID==1)
+	  {
+		  product.setIdentifier(productID);
+		  product.setName("Load Factor Based Upgrades");
+	  }
+      return new ApiResponseMessage<>(HttpStatus.OK, "ok", product);
   }
   public ApiResponseMessage<Product> update(Long productID, String productName) {
       return new ApiResponseMessage<>(HttpStatus.NOT_FOUND, "", null);
