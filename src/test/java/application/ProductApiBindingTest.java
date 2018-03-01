@@ -19,7 +19,7 @@ public class ProductApiBindingTest {
 
     @Test
     public void testGetProductNotFound() {
-        ApiResponseMessage<Product> response = productBinding.get(2L);
+        ApiResponseMessage<Product> response = productBinding.get(4L);
         assertEquals(HttpStatus.NOT_FOUND, response.getCode());
     }
 
