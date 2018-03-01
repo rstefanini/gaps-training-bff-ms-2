@@ -22,5 +22,11 @@ public class ProductApiBindingTest {
         ApiResponseMessage<Product> response = productBinding.get(2L);
         assertEquals(HttpStatus.NOT_FOUND, response.getCode());
     }
+    
+    @Test
+    public void testGetIBMProduct() {
+        ApiResponseMessage<Product> response = productBinding.get(1L);
+        assertEquals(HttpStatus.OK, response.getCode());
+    }
 
 }

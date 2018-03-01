@@ -2,6 +2,7 @@ package application;
 
 //this is the class that binds to selected services
 import application.model.Product;
+import src.main.java.infrastructure.service.IBMProductImpl;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
@@ -14,14 +15,14 @@ public class ProductApiBinding {
     }
 
     public ApiResponseMessage<Product> get(Long productID) {
-        Product p = new Product();
-        p.setIdentifier(1L);
-        p.setName("First Product");
-        if (productID == p.getIdentifier()) {
-            return new ApiResponseMessage<>(HttpStatus.OK, "OK", p);
-        } else {
-            return new ApiResponseMessage<>(HttpStatus.NOT_FOUND, "", null);
-        }
+
+        IBMProductImpl p = new IBMProductImpl();
+        Product result = p.getProduct(productID);
+
+        if (result == null)
+            return new ApiResponseMessage<>(HttpStatus.NOT_FOUND, "Product Not Found", null);
+
+        return new ApiResponseMessage<>(HttpStatus.OK, result.getName(), result);
     }
 
     public ApiResponseMessage<Product> update(Long productID, String productName) {
